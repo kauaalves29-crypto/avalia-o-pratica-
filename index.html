@@ -3,46 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confinamento</title>
+    <title>Confinamento de Gado</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>Confinamento</h1>
-
-        <button id="temaBtn" onclick="alternarTema()">
-            🌙 Tema Escuro
-        </button>
+        <h1>🐂 Confinamento de Gado</h1>
+        <button id="temaBtn">🌙 Tema Escuro</button>
     </header>
 
     <main>
         <section class="hero">
             <img 
-                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80" 
-                alt="Ambiente interno durante um período de confinamento"
+                src="https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?auto=format&fit=crop&w=1200&q=80"
+                alt="Gado em área de confinamento"
             >
 
             <div class="conteudo">
-                <h2>Sobre o Confinamento</h2>
+                <h2>Confinamento de Bovinos</h2>
 
                 <p>
-                    O confinamento é uma medida utilizada para limitar a circulação
-                    de pessoas em determinadas situações, como emergências sanitárias.
-                    Durante esse período, é importante cuidar da saúde física e mental.
+                    O confinamento de bovinos é um sistema de criação em que
+                    os animais permanecem em uma área determinada e recebem
+                    alimentação e manejo planejados para melhorar o desempenho
+                    e o ganho de peso.
                 </p>
 
-                <button onclick="mostrarMensagem()">
-                    Saiba mais
-                </button>
+                <button id="infoBtn">Saiba mais</button>
 
-                <p id="mensagem"></p>
+                <div id="info" class="info"></div>
+            </div>
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <h3>🌾 Alimentação</h3>
+                <p>
+                    A dieta é planejada de acordo com as necessidades
+                    nutricionais dos animais.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>💧 Água</h3>
+                <p>
+                    O fornecimento de água limpa e de qualidade é essencial
+                    para o bem-estar do gado.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🐄 Manejo</h3>
+                <p>
+                    O manejo adequado contribui para a saúde, segurança
+                    e produtividade dos animais.
+                </p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 - Site sobre Confinamento</p>
+        <p>© 2026 - Confinamento de Gado</p>
     </footer>
 
     <script src="script.js"></script>
@@ -55,14 +77,14 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #222;
-    transition: 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f1e8;
+    color: #292929;
+    transition: background 0.4s, color 0.4s;
 }
 
 header {
-    background-color: #2563eb;
+    background: #3d5a2a;
     color: white;
     padding: 20px 8%;
     display: flex;
@@ -71,39 +93,39 @@ header {
 }
 
 header h1 {
-    font-size: 30px;
+    font-size: 28px;
 }
 
 button {
     border: none;
+    padding: 12px 20px;
     border-radius: 8px;
-    padding: 12px 18px;
-    background-color: #2563eb;
+    background: #d88b22;
     color: white;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
 
-header button {
-    background-color: white;
-    color: #222;
+button:hover {
+    background: #b96f12;
+    transform: scale(1.05);
 }
 
-button:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
+#temaBtn {
+    background: white;
+    color: #333;
 }
 
 main {
-    min-height: 80vh;
-    padding: 50px 8%;
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
 }
 
 .hero {
-    max-width: 1100px;
-    margin: auto;
-    background-color: white;
+    background: white;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
@@ -111,8 +133,9 @@ main {
 
 .hero img {
     width: 100%;
-    height: 350px;
+    height: 420px;
     object-fit: cover;
+    display: block;
 }
 
 .conteudo {
@@ -121,9 +144,9 @@ main {
 }
 
 .conteudo h2 {
+    color: #3d5a2a;
     font-size: 32px;
     margin-bottom: 20px;
-    color: #2563eb;
 }
 
 .conteudo p {
@@ -132,43 +155,76 @@ main {
     margin-bottom: 25px;
 }
 
-#mensagem {
+.info {
     margin-top: 20px;
+    font-size: 17px;
+    color: #3d5a2a;
     font-weight: bold;
-    color: #2563eb;
 }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: #3d5a2a;
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+/* TEMA ESCURO */
+
+body.dark {
+    background: #151a13;
+    color: #f2f2f2;
+}
+
+body.dark .hero,
+body.dark .card {
+    background: #252c22;
+}
+
+body.dark .conteudo h2,
+body.dark .card h3,
+body.dark .info {
+    color: #9bc477;
+}
+
+body.dark #temaBtn {
+    background: #333;
+    color: white;
+}
+
+body.dark footer {
+    background: #26351e;
+}
+
+/* RODAPÉ */
 
 footer {
+    background: #3d5a2a;
+    color: white;
     text-align: center;
     padding: 25px;
-    background-color: #2563eb;
-    color: white;
+    margin-top: 40px;
 }
 
-/* Tema escuro */
-body.escuro {
-    background-color: #111827;
-    color: #f9fafb;
-}
+/* CELULAR */
 
-body.escuro .hero {
-    background-color: #1f2937;
-}
-
-body.escuro .conteudo h2 {
-    color: #60a5fa;
-}
-
-body.escuro #mensagem {
-    color: #60a5fa;
-}
-
-body.escuro header button {
-    background-color: #374151;
-    color: white;
-}
-
-/* Responsividade */
 @media (max-width: 700px) {
     header {
         flex-direction: column;
@@ -176,38 +232,63 @@ body.escuro header button {
         text-align: center;
     }
 
-    main {
-        padding: 25px 5%;
-    }
-
     .hero img {
-        height: 250px;
+        height: 280px;
     }
 
     .conteudo {
         padding: 25px;
     }
 
-    .conteudo h2 {
-        font-size: 26px;
+    .cards {
+        grid-template-columns: 1fr;
     }
 }
-function alternarTema() {
-    const body = document.body;
-    const botao = document.getElementById("temaBtn");
+const temaBtn = document.getElementById("temaBtn");
+const infoBtn = document.getElementById("infoBtn");
+const info = document.getElementById("info");
 
-    body.classList.toggle("escuro");
+temaBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
 
-    if (body.classList.contains("escuro")) {
-        botao.innerHTML = "☀️ Tema Claro";
+    if (document.body.classList.contains("dark")) {
+        temaBtn.textContent = "☀️ Tema Claro";
     } else {
-        botao.innerHTML = "🌙 Tema Escuro";
+        temaBtn.textContent = "🌙 Tema Escuro";
     }
-}
+});
 
-function mostrarMensagem() {
-    const mensagem = document.getElementById("mensagem");
+infoBtn.addEventListener("click", () => {
+    if (info.textContent === "") {
+        info.textContent =
+            "No confinamento, os bovinos recebem alimentação controlada, água disponível e acompanhamento diário para garantir boas condições de manejo e bem-estar.";
+        infoBtn.textContent = "Ocultar informação";
+    } else {
+        info.textContent = "";
+        infoBtn.textContent = "Saiba mais";
+    }
+});
+const temaBtn = document.getElementById("temaBtn");
+const infoBtn = document.getElementById("infoBtn");
+const info = document.getElementById("info");
 
-    mensagem.innerHTML =
-        "Durante um confinamento, mantenha uma rotina, cuide da sua saúde mental e mantenha contato com familiares e amigos.";
-}
+temaBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        temaBtn.textContent = "☀️ Tema Claro";
+    } else {
+        temaBtn.textContent = "🌙 Tema Escuro";
+    }
+});
+
+infoBtn.addEventListener("click", () => {
+    if (info.textContent === "") {
+        info.textContent =
+            "No confinamento, os bovinos recebem alimentação controlada, água disponível e acompanhamento diário para garantir boas condições de manejo e bem-estar.";
+        infoBtn.textContent = "Ocultar informação";
+    } else {
+        info.textContent = "";
+        infoBtn.textContent = "Saiba mais";
+    }
+});
