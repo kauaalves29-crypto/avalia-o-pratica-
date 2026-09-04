@@ -268,27 +268,8 @@ infoBtn.addEventListener("click", () => {
         infoBtn.textContent = "Saiba mais";
     }
 });
-const temaBtn = document.getElementById("temaBtn");
-const infoBtn = document.getElementById("infoBtn");
-const info = document.getElementById("info");
+<img
+    src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80"
+    alt="Boi em uma área de confinamento"
+>
 
-temaBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    if (document.body.classList.contains("dark")) {
-        temaBtn.textContent = "☀️ Tema Claro";
-    } else {
-        temaBtn.textContent = "🌙 Tema Escuro";
-    }
-});
-
-infoBtn.addEventListener("click", () => {
-    if (info.textContent === "") {
-        info.textContent =
-            "No confinamento, os bovinos recebem alimentação controlada, água disponível e acompanhamento diário para garantir boas condições de manejo e bem-estar.";
-        infoBtn.textContent = "Ocultar informação";
-    } else {
-        info.textContent = "";
-        infoBtn.textContent = "Saiba mais";
-    }
-});
