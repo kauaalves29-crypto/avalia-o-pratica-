@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confinamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Confinamento</h1>
+
+        <button id="temaBtn" onclick="alternarTema()">
+            🌙 Tema Escuro
+        </button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img 
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80" 
+                alt="Ambiente interno durante um período de confinamento"
+            >
+
+            <div class="conteudo">
+                <h2>Sobre o Confinamento</h2>
+
+                <p>
+                    O confinamento é uma medida utilizada para limitar a circulação
+                    de pessoas em determinadas situações, como emergências sanitárias.
+                    Durante esse período, é importante cuidar da saúde física e mental.
+                </p>
+
+                <button onclick="mostrarMensagem()">
+                    Saiba mais
+                </button>
+
+                <p id="mensagem"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 - Site sobre Confinamento</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+    transition: 0.3s;
+}
+
+header {
+    background-color: #2563eb;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header button {
+    background-color: white;
+    color: #222;
+}
+
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+main {
+    min-height: 80vh;
+    padding: 50px 8%;
+}
+
+.hero {
+    max-width: 1100px;
+    margin: auto;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.conteudo {
+    padding: 35px;
+    text-align: center;
+}
+
+.conteudo h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #2563eb;
+}
+
+.conteudo p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+#mensagem {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #2563eb;
+    color: white;
+}
+
+/* Tema escuro */
+body.escuro {
+    background-color: #111827;
+    color: #f9fafb;
+}
+
+body.escuro .hero {
+    background-color: #1f2937;
+}
+
+body.escuro .conteudo h2 {
+    color: #60a5fa;
+}
+
+body.escuro #mensagem {
+    color: #60a5fa;
+}
+
+body.escuro header button {
+    background-color: #374151;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    main {
+        padding: 25px 5%;
+    }
+
+    .hero img {
+        height: 250px;
+    }
+
+    .conteudo {
+        padding: 25px;
+    }
+
+    .conteudo h2 {
+        font-size: 26px;
+    }
+}
+function alternarTema() {
+    const body = document.body;
+    const botao = document.getElementById("temaBtn");
+
+    body.classList.toggle("escuro");
+
+    if (body.classList.contains("escuro")) {
+        botao.innerHTML = "☀️ Tema Claro";
+    } else {
+        botao.innerHTML = "🌙 Tema Escuro";
+    }
+}
+
+function mostrarMensagem() {
+    const mensagem = document.getElementById("mensagem");
+
+    mensagem.innerHTML =
+        "Durante um confinamento, mantenha uma rotina, cuide da sua saúde mental e mantenha contato com familiares e amigos.";
+}
